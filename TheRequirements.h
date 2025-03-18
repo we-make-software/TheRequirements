@@ -9,11 +9,11 @@
     MODULE_LICENSE("GPL"); \
     MODULE_AUTHOR("We-Make-Software.Com"); \
     static int __init SetupInitProject(void) { \
-        init; \
+        Start(); \
         return 0; \
     } \
     static void __exit SetupExitProject(void) { \
-        exit; \
+        Stop(); \
     } \
     module_init(SetupInitProject); \
     module_exit(SetupExitProject);
