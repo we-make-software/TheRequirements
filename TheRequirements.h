@@ -4,18 +4,19 @@
 #include <linux/kernel.h>
 #include <linux/init.h>
  //Sad wee can't do WTFPL
-#define Setup(description, init, exit) \
+#define Layer0Setup(description,layer) \
     MODULE_DESCRIPTION(description); \
     MODULE_LICENSE("GPL"); \
     MODULE_AUTHOR("We-Make-Software.Com"); \
     static int __init SetupInitProject(void) { \
-        Start(); \
+        Layer0Start(); \
+        printk(KERN_INFO "%s: Start\nTimestamp: %llu\n", description, ktime_get_real_seconds()); \
         return 0; \
     } \
     static void __exit SetupExitProject(void) { \
-        Stop(); \
+        Layer0End(); \
+        printk(KERN_INFO "%s: End\nTimestamp: %llu\n", description, ktime_get_real_seconds()); \
     } \
     module_init(SetupInitProject); \
     module_exit(SetupExitProject);
-#define U48_To_U64(value)((u64)(value[0])<<40|(u64)(value[1])<<32|(u64)(value[2])<<24|(u64)(value[3])<<16|(u64)(value[4])<<8|(u64)(value[5])&0xFFFFFFFFFFFF)
 #endif
