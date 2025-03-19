@@ -3,7 +3,8 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/init.h>
- //Sad wee can't do WTFPL
+#include <linux/slab.h> 
+//Sad wee can't do WTFPL
  //https://github.com/we-make-software/TheRequirements?tab=License-1-ov-file
  //Damm!! you GPL!!
 #define Layer0Setup(description,version,build) \
