@@ -5,8 +5,8 @@
 #include <linux/init.h>
 #include <linux/slab.h> 
 //Sad wee can't do WTFPL
- //https://github.com/we-make-software/TheRequirements?tab=License-1-ov-file
- //Damm!! you GPL!!
+//https://github.com/we-make-software/TheRequirements?tab=License-1-ov-file
+//Damm!! you GPL!!Show me!!
 #define Layer0Setup(description,version,build) \
     MODULE_DESCRIPTION(description "\version: " #version "\build:" #build); \
     MODULE_LICENSE("GPL"); \
